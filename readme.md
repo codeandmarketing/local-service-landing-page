@@ -10,10 +10,18 @@
 9. No CSS or JavaScript frameworks used.
 
 # Usage 
+1. Create .htacess file and paste this inside.
+```
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
 
-1. Fill out the config.php file
-2. Edit line 105 in action_sitemap.php to contain the correct locations
-3. Run action_sitemap.php
+RewriteRule ^(.+)$ index.php [QSA,L]
+```
+2. Fill out the config.php file
+3. Edit line 105 in action_sitemap.php to contain the correct locations
+4. Run action_sitemap.php
 5. Run index.php
 
 # Template Recomendations
@@ -22,4 +30,4 @@
 2. Minify and paste your CSS in the head. 
 3. Minify and paste JavaScript in the footer. Unless you have a reason to use jQuery, do not use it. In most cases it's uneeded bloat that will slow down the load time.
 4. Use small, highly optimized files in the .jpeg or .svg format if possible.
-5. Use GEO tags on images for SEO# local-service-landing-page
+5. Use GEO tags on images for SEO
